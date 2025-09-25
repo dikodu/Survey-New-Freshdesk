@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepUp Freshdesk Feedback Survey - Language Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --deepup-primary: #4ECDC4;
+            --deepup-secondary: #44B3AC;
+            --deepup-dark: #2C3E50;
+            --deepup-light: #F8FFFE;
+            --deepup-gray: #6B7280;
+        }
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .deepup-logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--deepup-dark);
+            margin-bottom: 2rem;
+        }
+
+        .deepup-logo .accent {
+            color: var(--deepup-primary);
+        }
+
+        .language-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .language-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--deepup-primary);
+            box-shadow: 0 35px 70px rgba(78, 205, 196, 0.3);
+        }
+
+        .language-flag {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .language-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--deepup-dark);
+            margin-bottom: 1rem;
+        }
+
+        .language-subtitle {
+            font-size: 1.1rem;
+            color: var(--deepup-gray);
+            margin-bottom: 2rem;
+        }
+
+        .language-button {
+            background: var(--deepup-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .language-button:hover {
+            background: var(--deepup-secondary);
+            transform: translateY(-2px);
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 3rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+            padding: 4rem 3rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+            
+            .deepup-logo {
+                font-size: 2.5rem;
+            }
+            
+            .language-card {
+                padding: 2rem 1rem;
+                min-height: 250px;
+            }
+            
+            .language-flag {
+                font-size: 3rem;
+            }
+            
+            .language-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="main-container animate-fade-in">
+        <!-- Header -->
+        <div class="text-center mb-12 stagger-1 animate-fade-in">
+            <div class="deepup-logo">
+                <span class="accent">Deep</span>Up
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Freshdesk Feedback Survey</h1>
+            <p class="text-xl text-gray-600">Please select your preferred language / Bitte wählen Sie Ihre Sprache</p>
+        </div>
+
+        <!-- Language Selection -->
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- German -->
+            <div class="language-card stagger-2 animate-fade-in" onclick="window.location.href='survey_de.html'">
+                <div class="language-flag">🇩🇪</div>
+                <h2 class="language-title">Deutsch</h2>
+                <p class="language-subtitle">
+                    Hilf uns, deine Arbeitstools zu optimieren!<br>
+                    Umfrage auf Deutsch ausfüllen
+                </p>
+                <button class="language-button">
+                    <i class="fas fa-arrow-right mr-2"></i>
+                    Survey starten
+                </button>
+            </div>
+
+            <!-- English -->
+            <div class="language-card stagger-3 animate-fade-in" onclick="window.location.href='survey_en.html'">
+                <div class="language-flag">🇬🇧</div>
+                <h2 class="language-title">English</h2>
+                <p class="language-subtitle">
+                    Help us optimize your work tools!<br>
+                    Take the survey in English
+                </p>
+                <button class="language-button">
+                    <i class="fas fa-arrow-right mr-2"></i>
+                    Start Survey
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Footer Info -->
+        <div class="text-center mt-12 text-gray-500">
+            <p><i class="fas fa-clock mr-2"></i>Estimated time: 5-7 minutes / Geschätzte Zeit: 5-7 Minuten</p>
+        </div>
+    </div>
+
+    <script>
+        // Add staggered animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+
+        // Add hover sound effect (optional)
+        document.querySelectorAll('.language-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
